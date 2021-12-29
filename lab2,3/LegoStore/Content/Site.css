@@ -1,0 +1,13 @@
+﻿body {
+    background-image: url('Image/bg4.jpg');
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 20px;
+    font-family: cursive, Helvetica, Sans-Serif;
+    font-weight: 400;
+    padding-left: 60px;
+    padding-top: 40px;
+}

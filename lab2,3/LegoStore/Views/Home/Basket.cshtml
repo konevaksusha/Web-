@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+<html>
+<body>
+
+        <h2 style="color:rgb(255, 255, 255)">Basket</h2>
+        <div>
+
+            <div class="caption">
+                @foreach (var b in ViewBag.ThisBasket)
+                {<div class="col-md-4">
+
+                        <div class="thumbnail" style="height:470px; background-color:rgba(255, 255, 255, 0.81)">
+                            <a href="/Home/kit/@b.Id"><img src="~/Content/Image/@b.Image" alt="текст" style="height:300px" /></a>
+
+                            <div class="text-center">
+                                <div style="color:#000000;">
+                                    <p>Набор: @b.Name</p>
+                                    <p>Серия: @b.Series</p>
+                                    <p>Цена: @b.Price</p>
+                                </div>
+                                <p>
+                                    <a class="btn btn-primary" href="/Home/Buy/@b.Id">Купить</a>
+                              
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+
+        </div>
+    <hr/>
+    <h3 style="color:rgb(255, 255, 255)"> Всего: @ViewBag.Value</h3>
+</body>
+</html>
+

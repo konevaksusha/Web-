@@ -1,0 +1,60 @@
+﻿@{ 
+    ViewBag.Title = "Конструкторы";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 style="color:#ffffff">Lego-наборы</h1>
+    <div>
+        @using (Ajax.BeginForm("BoxSearch", new AjaxOptions
+        {
+            UpdateTargetId = "results",
+            LoadingElementId = "loading",
+            LoadingElementDuration = 1000
+        }))
+        {
+            <input type="text" name="name" />
+            <input type="submit" value="Поиск" />
+            <div id="loading" style="display:none; color:Red; font-weight:bold;">
+                <p>Идет загрузка...</p>
+            </div>
+            <div id="results"></div>
+            <div id="results"></div>
+        }
+
+
+
+    </div>
+    <hr/>
+
+
+    <div>
+
+        <div class="caption">
+            @foreach (var b in ViewBag.Boxes)
+            {<div class="col-md-4">
+
+                    <div class="thumbnail" style="height:470px; background-color:rgba(255, 255, 255, 0.88)">
+                        <a href="/Home/kit/@b.Id"><img src="~/Content/Image/@b.Image" alt="текст" style="height:300px" /></a>
+
+                        <div class="text-center">
+                            <div style="color:#000000;">
+                                <p>Набор: @b.Name</p>
+                                <p>Серия: @b.Series</p>
+                                <p>Цена: @b.Price</p>
+                            </div>
+                            <p>
+                                <a class="btn btn-primary" href="/Home/Buy/@b.Id">Купить</a>
+                                <a class="btn btn-primary" href="/Home/AddBasket/@b.Id">В корзину</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+
+    </div>
+</body>
+</html>

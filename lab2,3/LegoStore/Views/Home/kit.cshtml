@@ -1,0 +1,20 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <div class="thumbnail" style="height:500px; background-color:rgba(255, 255, 255, 0.81)")>
+       
+        <img src="~/Content/Image/@ViewBag.ThisBox.Image" style="height:270px; float:left; margin-top:75px">
+            <div class="container col-sm-8">
+                <h3>@ViewBag.ThisBox.Name</h3>
+                <p class="text-left"> Цена: @ViewBag.ThisBox.Price 
+                <a class="btn btn-success" href="/Home/Buy/@ViewBag.ThisBox.Id">Купить</a></p>
+
+                <p>@ViewBag.ThisBox.Description</p>
+
+            </div>
+        </div>
+</body>
+</html>
